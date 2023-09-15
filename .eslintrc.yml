@@ -1,0 +1,41 @@
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+extends:
+  - airbnb-base
+  - plugin:security/recommended
+  - plugin:import/recommended
+parserOptions:
+  ecmaVersion: latest
+rules: {}
+overrides:
+  # project
+  - files:
+      - "*.js"
+      - "*.mjs"
+    rules:
+      no-underscore-dangle:
+        - error
+        - allow:
+            - _id
+      linebreak-style: off
+      import/prefer-default-export: off
+      import/no-extraneous-dependencies: off
+      arrow-body-style: off
+      no-unused-vars:
+        - error
+        - args: none
+  # jest
+  - files:
+      - "./src/**/__tests__/*.test.*"
+      - "./src/**/__mocks__/**/*.js"
+      - "./jest/**/*.js"
+    env:
+      jest: true
+    globals:
+      request: readonly
+      closeServer: readonly
+    rules:
+      global-require: off
+      max-len: off
