@@ -402,5 +402,5 @@ const config = {
 # Template
 
 ```bash
-https://github.com/templates-deltacap019/with-commonjs-eslint-jest-supertest.git
+npx degit "https://github.com/templates-deltacap019/with-commonjs-eslint-jest-supertest.git" "my_proj"
 ```
